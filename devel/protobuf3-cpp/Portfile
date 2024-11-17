@@ -10,7 +10,7 @@ PortGroup       cmake 1.1
 # NOTE: For a minor or major version number change, also
 # NOTE:   Revbump et, protobuf-c, mosh and py-onnx
 set release_version \
-                21.12
+                28.3
 
 name            protobuf3-cpp
 github.setup    protocolbuffers protobuf 3.${release_version} v

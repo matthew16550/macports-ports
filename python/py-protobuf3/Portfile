@@ -5,16 +5,18 @@ PortGroup       compiler_blacklist_versions 1.0
 PortGroup       python 1.0
 PortGroup       github 1.0
 
-# note the python package is a major version greater than the cpp package
+# note the python package major version differs from the cpp package
 set release_version \
-                21.12
+                28.3
 name            py-protobuf3
-version         4.${release_version}
+version         5.${release_version}    # changed to 5 in v26.0 https://github.com/protocolbuffers/protobuf/pull/15590
 revision        2
 
 checksums       sha256  e2b976e67d6fcf7078f799143a73f2a4d9cf3126ca68a1a6f1bda30fe5f3585c \
                 rmd160  5cb0e68bcf7674138208d5acac258330d5a6d4dd \
                 size    5211420
+
+ # v22 stopped releasing -python tars ??
 
 categories-append  devel
 maintainers     nomaintainer
@@ -36,7 +38,12 @@ long_description \
                 defining protocol buffer message types in .proto \
                 files.  Each protocol buffer message is a small \
                 logical record of information, containing a series of \
-                name-value pairs.
+                name-value pairs. \
+                \
+                Note the "3" in this port name refers the "proto3" \
+                revision of the Protocol Buffers language and not \
+                to Python 3.
+
 
 supported_archs noarch
 platforms       {darwin any}
